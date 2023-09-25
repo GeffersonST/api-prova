@@ -29,11 +29,13 @@ function App() {
       <div className="App-background">
       <h1>Lista de Itens</h1>
     <ul>
-      <li>Item</li>
-      <li>Item</li>
-      <li>Item</li>
-      <li>Item</li>
-      <li>Item</li>
+      <li>
+    {itemData.map((pokemon) => {
+      return <li>{pokemon.name}</li>
+    })}
+
+      </li>
+
     </ul>
 
       </div>
