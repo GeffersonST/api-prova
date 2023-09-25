@@ -1,16 +1,25 @@
 import axios from 'axios';
 import './App.css';
+import { useEffect, useState } from 'react';
 
 function App() {
 
-const getItem = async () => {
+  const [itemData, setItemData] = useState([]);
 
-  await axios.get("https://pokeapi.co/api/v2/pokemon");
+  useEffect(() => {
+    const getItem = async () => {
 
-}
+      await axios.get("https://pokeapi.co/api/v2/pokemon").then((response) => {
+        setItemData(response.data.results);
+      })
+
+    }
 
 
-getItem();
+    getItem();
+  },[])
+
+
 
 
 
